@@ -1,0 +1,10 @@
+Explanation of the choices
+
+1. BLAST program
+The BLASTp, the protein-protein BLAST, is used because the comparison is between humans and mice protein sequences, which is concluded after viewing the fasta files that contain amino acid codes in addition to the bases. This particular BLAST program is specifically optimized to detect homologous relationships between protein sequences. It aligns protein sequences and uses substitution matrices that accomodate amino acid similarities and differences.
+
+2. Substitution Matrix
+Since BLASTp is selected, the BLOSUM62 matrix, commonly used for general protein similarity searches due its balance between sensitivity and specificity, by default is used. This substitution matrix is well-suited for detecting homologs across moderately divergent species like human and mouse. 
+
+3. Choice of parameters
+The E-value is set to 0.001, which filters out weak matches and ensures that only statistically ignificant alignments are included, meaning that there are more confident matches. The output format chosen is the XML format in order to be able to parse easily with Biopython and extract the details such as alignment, E-value, and bitscore.
